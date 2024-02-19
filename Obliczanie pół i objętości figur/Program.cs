@@ -21,10 +21,9 @@ namespace Obliczanie_pól_i_objętości_figur
             Console.WriteLine("Wybrałeś {0}", wybor);
             PoleFigur pole = new PoleFigur();
 
-            if (wybor == "okrag" || wybor == "kwadrat" || wybor == "prostokat" || wybor == "trojkat")
-            {
-                switch (wybor)
-                {
+             
+           switch (wybor)
+           {
                     case "okrag":
                         pole.Okrag(out r, out polef);
                         break;
@@ -40,17 +39,16 @@ namespace Obliczanie_pól_i_objętości_figur
                     case "trojkat":
                         pole.Trojkat(out a, out h, out polef);
                         break;
-                }
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Podałeś złe wyrazenie, popraw!");
-                Console.ResetColor();
-                Console.WriteLine("Masz do wyboru: okrag, kwadrat, prostokat, trojkat.");
-                goto skip;
-            }
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Podałeś złe wyrazenie, popraw!");
+                        Console.ResetColor();
+                        Console.WriteLine("Masz do wyboru: okrag, kwadrat, prostokat, trojkat.");
+                        goto skip;
 
+           }
+            
+           
             // Obliczanie objętości
             Console.Write("Teraz policzymy objętość bryły. Podaj jego wysokość: ");
             skip2:
