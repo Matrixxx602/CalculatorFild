@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34526.213
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obliczanie pól i objętości figur", "Obliczanie pół i objętości figur\Obliczanie pól i objętości figur.csproj", "{310CE2B3-A410-497B-9D8B-510707A1A9A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obliczanie pol i objetosci figur", "Obliczanie pół i objętości figur\Obliczanie pol i objetosci figur.csproj", "{310CE2B3-A410-497B-9D8B-510707A1A9A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

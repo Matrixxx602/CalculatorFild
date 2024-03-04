@@ -7,11 +7,12 @@
     <ProjectGuid>{310CE2B3-A410-497B-9D8B-510707A1A9A9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Obliczanie_pół_i_objętości_figur</RootNamespace>
-    <AssemblyName>Obliczanie pół i objętości figur</AssemblyName>
+    <AssemblyName>Obliczanie pol i objetosci figur</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -58,8 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Communique.cs" />
+    <Compile Include="FigureField.cs" />
+    <Compile Include="Interafces\IConsoleUIMenu.cs" />
+    <Compile Include="Interafces\IConsoleUISubMenu.cs" />
+    <Compile Include="Models\Circle.cs" />
+    <Compile Include="Models\GeometricFigure.cs" />
+    <Compile Include="Models\Rectangle.cs" />
+    <Compile Include="Models\Square.cs" />
+    <Compile Include="Models\Triangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInputHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

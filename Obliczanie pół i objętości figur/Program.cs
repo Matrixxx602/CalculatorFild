@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Obliczanie_pół_i_objętości_figur;
+using System;
 using System.Security.Policy;
 
-namespace Obliczanie_pól_i_objętości_figur
+namespace Obliczanie_pol_i_objetosci_figur
 {
     internal class Program
     {
@@ -9,44 +10,41 @@ namespace Obliczanie_pól_i_objętości_figur
         {
             // Zmienne
             string choice;
-            float area, bigheight, vol;
+            double area, bigHeight, vol;
 
             // Wybór figury geometrycznej
             Console.WriteLine("Witaj w programie obliczjącym pola i objętości figur.");
             Console.WriteLine("Wybierz jedną z figur: okrag, kwadrat, prostokat, trojkat.");
 
             // Obliczanie pola figury
-            FigureField pole = new FigureField();
             skip:
             choice = Console.ReadLine();
 
            switch (choice)
            {
                     case "okrag":
-                        area = pole.CalculateCircle();
+                        area = FigureField.CalculateCircle();
                         break;
 
                     case "kwadrat":
-                       area = pole.CalculateSquare();
+                       area = FigureField.CalculateSquare();
                         break;
 
                     case "prostokat":
-                       area = pole.CalculateRectangle(out bool isIt);
+                       area = FigureField.CalculateRectangle(out bool square);
 
-                        if (isIt)
+                        if (square)
                         {
                         Console.WriteLine("Ten prostokat jest kwadratem.");
                         }
                         break;
 
                     case "trojkat":
-                        area = pole.CalculateTriangle();
+                        area = FigureField.CalculateTriangle();
                         break;
 
                     default:
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Podales zle wyrazenie, popraw!");
-                        Console.ResetColor();
+                    Communique.WrongAnswer();
                         Console.WriteLine("Masz do wyboru: okrag, kwadrat, prostokat, trojkat.");
                         goto skip;
 
@@ -56,76 +54,16 @@ namespace Obliczanie_pól_i_objętości_figur
             // Obliczanie objętości
             Console.Write("Teraz policzymy objętość bryły. Podaj jego wysokość: ");
             skip2:
-            bool value = float.TryParse(Console.ReadLine(), out bigheight);
-            if (bigheight <= 0)
+            bool value = double.TryParse(Console.ReadLine(), out bigHeight);
+            if (bigHeight <= 0)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Zła wartość! Podaj wlasciwa.");
-                Console.ResetColor();
+                Communique.WrongAnswer();
                 goto skip2;          
             }
 
-            vol = area * bigheight;
+            vol = area * bigHeight;
             Console.WriteLine("Objetość bryły o podstawie {0} to: {1}",choice, vol);
-        }
-    }
-    public class FigureField
-    {
-        internal float CalculateCircle()
-        {
-            const float pi = 3.1415f;
-
-            var r = UserInputHelper.GetValue("Podaj promien okręgu: ");
-
-            return pi * (r * r);
-        }
-
-        internal float CalculateSquare()
-        {
-            float side1 = UserInputHelper.GetValue("Podaj bok kwadratu");
-
-            return side1 * side1;
-        }
-
-        internal float CalculateRectangle(out bool isSquare)
-        {
-            isSquare = false;
-
-            float side1 = UserInputHelper.GetValue("Podaj pierwszy bok prostokata: ");
-            var side2 = UserInputHelper.GetValue("Podaj drugi bok prostokata: ");
-           
-
-            if (side1 == side2)
-            {
-                isSquare = true;
-            }
-
-            return side1 * side2;
-        }
-
-        internal float CalculateTriangle()
-        {
-            float side1 = UserInputHelper.GetValue("Podaj dlugosc podstawy trojkata: ");
-            var height = UserInputHelper.GetValue("Podaj wysokosc trojkata: ");
-          
-            return side1 * height * 0.5f;
-        }
-    }
-    public static class UserInputHelper
-    {
-
-        public static float GetValue(string question)
-        {
-            Console.WriteLine(question);
-
-            while (!float.TryParse(Console.ReadLine(), out float result) || result <= 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Zla wartosc! Podaj wlasciwa.");
-                Console.ResetColor();
-                Console.WriteLine(question);
-            }
-            return result;
+            Console.ReadLine();
         }
     }
 }
