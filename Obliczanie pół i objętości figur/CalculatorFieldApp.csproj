@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{310CE2B3-A410-497B-9D8B-510707A1A9A9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Obliczanie_pół_i_objętości_figur</RootNamespace>
-    <AssemblyName>Obliczanie pol i objetosci figur</AssemblyName>
+    <RootNamespace>CalculatorFieldApp</RootNamespace>
+    <AssemblyName>CalculatorFieldApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,20 +48,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Communique.cs" />
     <Compile Include="FigureField.cs" />
-    <Compile Include="Interafces\IConsoleUIMenu.cs" />
-    <Compile Include="Interafces\IConsoleUISubMenu.cs" />
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\GeometricFigure.cs" />
     <Compile Include="Models\Rectangle.cs" />

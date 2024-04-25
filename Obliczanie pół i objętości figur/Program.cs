@@ -1,10 +1,10 @@
-﻿using Obliczanie_pół_i_objętości_figur;
+﻿using CalculatorFieldApp;
 using System;
 using System.Security.Policy;
 
-namespace Obliczanie_pol_i_objetosci_figur
+namespace CalculatorFieldApp
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -49,10 +49,11 @@ namespace Obliczanie_pol_i_objetosci_figur
                         goto skip;
 
            }
-            Console.WriteLine("Pole figury wynosi: {0}", area);
+            Console.WriteLine($"Pole figury wynosi: {Math.Round(area, 2)}");
+           
 
             // Obliczanie objętości
-            Console.Write("Teraz policzymy objętość bryły. Podaj jego wysokość: ");
+            Console.Write("Teraz policzymy objętość bryły. Podaj jej wysokość: ");
             skip2:
             bool value = double.TryParse(Console.ReadLine(), out bigHeight);
             if (bigHeight <= 0)
@@ -62,7 +63,7 @@ namespace Obliczanie_pol_i_objetosci_figur
             }
 
             vol = area * bigHeight;
-            Console.WriteLine("Objetość bryły o podstawie {0} to: {1}",choice, vol);
+            Console.WriteLine($"Objetość bryły o podstawie {choice} wynosi: {Math.Round(vol, 2)}");
             Console.ReadLine();
         }
     }

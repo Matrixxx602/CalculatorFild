@@ -1,10 +1,10 @@
-﻿using Obliczanie_pół_i_objętości_figur.Models;
+﻿using CalculatorFieldApp.Models;
 
-namespace Obliczanie_pol_i_objetosci_figur
+namespace CalculatorFieldApp
 {
-    internal static class FigureField
+    public static class FigureField
     {
-        internal static double CalculateCircle()
+        public static double CalculateCircle()
         {
             var r = UserInputHelper.GetValue("Podaj promien okręgu: ");
 
@@ -12,7 +12,7 @@ namespace Obliczanie_pol_i_objetosci_figur
             return circle.CalculateGeometricFigureField();
         }
 
-        internal static double CalculateSquare()
+        public static double CalculateSquare()
         {
             var side1 = UserInputHelper.GetValue("Podaj bok kwadratu");
 
@@ -20,7 +20,7 @@ namespace Obliczanie_pol_i_objetosci_figur
             return square.CalculateGeometricFigureField();
         }
 
-        internal static double CalculateRectangle(out bool isSquare)
+        public static double CalculateRectangle(out bool isSquare)
         {
             var side1 = UserInputHelper.GetValue("Podaj pierwszy bok prostokata: ");
             var side2 = UserInputHelper.GetValue("Podaj drugi bok prostokata: ");
@@ -32,7 +32,7 @@ namespace Obliczanie_pol_i_objetosci_figur
             return rectangle.CalculateGeometricFigureField();
         }
 
-        internal static double CalculateTriangle()
+        public static double CalculateTriangle()
         {
             var side1 = UserInputHelper.GetValue("Podaj dlugosc podstawy trojkata: ");
             var height = UserInputHelper.GetValue("Podaj wysokosc trojkata: ");

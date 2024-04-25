@@ -1,7 +1,7 @@
-﻿using Obliczanie_pół_i_objętości_figur;
+﻿using CalculatorFieldApp;
 using System;
 
-namespace Obliczanie_pol_i_objetosci_figur
+namespace CalculatorFieldApp
 {
     internal static class UserInputHelper
     {

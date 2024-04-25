@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Obliczanie_pół_i_objętości_figur
+namespace CalculatorFieldApp
 {
-    internal static class Communique
+    public static class Communique
     {
         public static void WrongAnswer()
         {

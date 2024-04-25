@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Obliczanie_pół_i_objętości_figur.Models
+namespace CalculatorFieldApp.Models
 {
-    internal class Rectangle : GeometricFigure
+    public class Rectangle : GeometricFigure
     {
         private double _side1;
         private double _side2;
